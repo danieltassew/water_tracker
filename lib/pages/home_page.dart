@@ -1,5 +1,7 @@
+import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_ce_flutter/adapters.dart';
+import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +14,8 @@ class _HomePageState extends State<HomePage> {
   final _myBox = Hive.box("MY_BOX");
   final _cupSizeTextController = TextEditingController();
   final _targetSizeTextController = TextEditingController();
+
+  var formatter = NumberFormat('#,##,000');
 
   int _counter = 0;
   int _cupSize = 600;
@@ -150,8 +154,18 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("$_counter", style: TextStyle(fontSize: 50)),
-            Text("/$_tragetSize", style: TextStyle(fontSize: 20)),
+            AnimatedFlipCounter(
+              value: _counter,
+              thousandSeparator: ',',
+              negativeSignDuration: Duration(milliseconds: 150),
+              duration: Duration(milliseconds: 600),
+              curve: Curves.linear,
+              textStyle: TextStyle(fontSize: 50),
+            ),
+            Text(
+              "/${formatter.format(_tragetSize)}",
+              style: TextStyle(fontSize: 20),
+            ),
           ],
         ),
       ),
