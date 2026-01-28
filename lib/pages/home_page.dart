@@ -123,8 +123,13 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: [
           PopupMenuButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            clipBehavior: Clip.antiAlias,
             itemBuilder: (context) => [
               PopupMenuItem(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 onTap: _setCupSize,
                 child: Text(
                   "Set cup size",
@@ -132,6 +137,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               PopupMenuItem(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 onTap: _setTraget,
                 child: Text(
                   "Set target",
@@ -139,6 +145,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               PopupMenuItem(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 onTap: _resetCounter,
                 child: Text(
                   "Reset counter",
