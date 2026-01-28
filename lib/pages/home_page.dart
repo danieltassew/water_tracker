@@ -154,14 +154,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedFlipCounter(
-              value: _counter,
-              thousandSeparator: ',',
-              negativeSignDuration: Duration(milliseconds: 150),
-              duration: Duration(milliseconds: 600),
-              curve: Curves.linear,
-              textStyle: TextStyle(fontSize: 50),
-            ),
+            Text(formatter.format(_counter), style: TextStyle(fontSize: 50)),
             Text(
               "/${formatter.format(_tragetSize)}",
               style: TextStyle(fontSize: 20),
