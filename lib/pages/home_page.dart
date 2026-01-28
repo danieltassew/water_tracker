@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_ce_flutter/adapters.dart';
 import 'package:intl/intl.dart';
+import 'package:water_tracker/components/counter_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -153,7 +154,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(formatter.format(_counter), style: TextStyle(fontSize: 50)),
+            CounterText(duration: Duration(milliseconds: 700), value: _counter),
             Text(
               "/${formatter.format(_tragetSize)}",
               style: TextStyle(fontSize: 20),
