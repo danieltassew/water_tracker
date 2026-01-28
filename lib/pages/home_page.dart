@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CounterText(duration: Duration(milliseconds: 700), value: _counter),
+            CounterText(duration: Duration(milliseconds: 800), value: _counter),
             Text(
               "/${formatter.format(_tragetSize)}",
               style: TextStyle(fontSize: 20),
